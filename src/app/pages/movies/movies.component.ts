@@ -14,10 +14,12 @@ export class MoviesComponent implements OnInit {
   public isLoading: boolean = true;
   public movies: IMovie[] = [];
 
-  public pageNumber: number = 0;
-  public pageSize: number = 10;
+  public pageNumber: number = 1;
+  public pageSize: number = 15;
   public yearFilter: string|null = null;
   public winnerFilter: EWinnerMovie = EWinnerMovie.YESNO;
+  public totalResults: number = 0;
+  public totalPages: number = 0;
 
   constructor(private moviesService: MoviesService) {}
 
@@ -32,13 +34,17 @@ export class MoviesComponent implements OnInit {
   }
 
   public filterMoviesByWinner(): void {
+    this.pageNumber = 1;
     const queryParams: string = this.getQueryParams();
   
     this.searchMovies(queryParams);
   }
 
   public filterMoviesByYear(): void {
-    if (this.yearFilter?.toString().length === 4) {
+    this.pageNumber = 1;
+    const yearLength: number = this.yearFilter?.toString().length ?? 0;
+
+    if (yearLength === 4 || yearLength === 0) {
       const queryParams: string = this.getQueryParams();
 
       this.searchMovies(queryParams);
@@ -50,6 +56,10 @@ export class MoviesComponent implements OnInit {
 
     this.moviesService.get(queryParams).subscribe((response: any) => {
       this.movies = response?.content ?? [];
+      // this.movies = [];
+
+      this.totalPages = response?.totalPages ?? 0;
+      this.totalResults = response?.totalElements ?? 0;
 
       this.isLoading = false;
     });
@@ -67,7 +77,7 @@ export class MoviesComponent implements OnInit {
   }
 
   private getPageNumberParam(): string {
-    return `page=${this.pageNumber}`;
+    return `page=${this.pageNumber - 1}`;
   }
 
   private getPageSizeParam():  string {
@@ -86,5 +96,13 @@ export class MoviesComponent implements OnInit {
 
   private getYearParam(): string {
     return this.yearFilter?.toString().length === 4 ? `&year=${this.yearFilter}` : '';
+  }
+
+  public changePage(newPage: number): void {
+    this.pageNumber = newPage;
+
+    const queryParams: string = this.getQueryParams();
+
+    this.searchMovies(queryParams);
   }
 }

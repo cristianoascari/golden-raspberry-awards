@@ -1,61 +1,22 @@
 @import './assets/styles/reset.scss';
 
+@import './assets/styles/card.scss';
+@import './assets/styles/form.scss';
+@import './assets/styles/table.scss';
+
 .container {
   display: flex;
   flex-direction: row;
   gap: 12px;
 
   .dynamic-content {
-    flex: 1;
+    // flex: 1;
+    padding-bottom: 20px;
+    width: 100%;
   }
 
   .content-container {
     height: calc(100vh - 39px);
     padding: 20px 10px;
-  }
-}
-
-.card {
-  border: 1px solid #e5e8ea;
-  border-radius: 5px;
-  padding: 12px;
-}
-
-input,
-select {
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  margin-top: 4px;
-  padding: 4px;
-  width: 100%;
-}
-
-table {
-  border: 1px solid #f4f4f4;
-  border-collapse: collapse;
-  width: 100%;
-  margin: 20px 0;
-
-  thead {
-    background-color: #f4f4f4;
-
-    tr {
-      th {
-        font-size: .8rem;
-      }
-    }
-  }
-
-  tr {
-    padding: 10px;
-
-    &:nth-child(even) {
-      background: #f4f4f4;
-    }
-
-    td, th {
-      border: 1px solid #dddbdb;
-      padding: 10px;
-    }
   }
 }

@@ -1,0 +1,29 @@
+table {
+  border: 1px solid #f4f4f4;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+
+  thead {
+    background-color: #f4f4f4;
+
+    tr {
+      th {
+        font-size: .8rem;
+      }
+    }
+  }
+
+  tr {
+    padding: 10px;
+
+    &:nth-child(even) {
+      background: #f4f4f4;
+    }
+
+    td, th {
+      border: 1px solid #dddbdb;
+      padding: 10px;
+    }
+  }
+}

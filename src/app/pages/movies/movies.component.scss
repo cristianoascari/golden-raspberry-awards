@@ -1,0 +1,30 @@
+.content-container {
+  display: flex;
+
+  .card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    .no-movies-found {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }  
+}
+.table-subtitle {
+  font-size: .8rem;
+  opacity: .6;
+}
+
+::ng-deep .ngx-pagination {
+  background: #f4f4f4;
+  border: 1px solid #dddbdb;
+  border-top: none;
+  margin-top: -20px;
+  padding: 10px;
+  text-align: center;
+}
