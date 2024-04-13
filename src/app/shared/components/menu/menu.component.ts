@@ -38,7 +38,6 @@ export class MenuComponent implements OnInit {
         title: 'Movies'
       }
     ];
-    console.log(this.mainMenu);
   }
 
   private isActiveMenu(activeRoute: string, menuPath:  string): boolean {

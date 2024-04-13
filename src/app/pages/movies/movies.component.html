@@ -1,5 +1,53 @@
 <div *ngIf="!isLoading" class="content-container">
-  Movies...
+  <div class="card">
+    <h1>List movies</h1>
+
+    <table *ngIf="movies.length">
+      <thead>
+        <tr>
+          <th>ID</th>
+
+          <th>
+            Year <br />
+
+            <input
+              type="number"
+              [(ngModel)]="yearFilter"
+              (input)="filterMoviesByYear()"
+              max="2024"
+              maxlength="4"
+              min="1980"
+              placeholder="Filter by year"
+              aria-label="Filter by year"
+            />
+          </th>
+          
+          <th>Title</th>
+          
+          <th>
+            Winner? <br />
+
+            <select [(ngModel)]="winnerFilter" (change)="filterMoviesByWinner()">
+              <option value="yesno">Yes/No</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{movie.id}}</td>
+          <td>{{movie.year}}</td>
+          <td>{{movie.title}}</td>
+          <td>{{movie.winner ? 'Yes' : 'No'}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1 *ngIf="!movies.length">No movies found</h1>
+  </div>
 </div>
 
 <app-loader *ngIf="isLoading"></app-loader>
