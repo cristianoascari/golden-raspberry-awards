@@ -1,5 +1,11 @@
 # GoldenRaspberryAwards
 
+Projeto teste desenvolvido em Angular para a Texo IT. As especificações estão no arquivo TexoIT-EspecificacaoTeste.pdf
+
+Abaixo seguem as instruções para execução.
+
+## Running
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
 ## Development server

@@ -1,0 +1,11 @@
+<section class="content-container menu">
+  <ul>
+    <li
+      *ngFor="let menu of mainMenu"
+      [ngClass]="{'active-menu': menu.active}"
+      (click)="goToPage(menu)"
+    >
+      {{ menu.title }}
+    </li>
+  </ul>
+</section>

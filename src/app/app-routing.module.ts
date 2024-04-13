@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard-routing.module').then(m => m.DashboardRoutingModule) },
-  { path: 'movies', loadChildren: () => import('./movies/movies-routing.module').then(m => m.MoviesRoutingModule) }
+  { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard-routing.module').then(m => m.DashboardRoutingModule) },
+  { path: 'movies', loadChildren: () => import('./pages/movies/movies-routing.module').then(m => m.MoviesRoutingModule) }
 ];
 
 @NgModule({

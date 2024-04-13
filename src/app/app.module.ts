@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { MoviesModule } from './movies/movies.module';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { MoviesModule } from './pages/movies/movies.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
@@ -16,7 +17,8 @@ import { AppComponent } from './app.component';
     
     AppRoutingModule,
     DashboardModule,
-    MoviesModule
+    MoviesModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

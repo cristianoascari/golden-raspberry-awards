@@ -1,0 +1,15 @@
+.menu {
+  background-color: #f8f9fa;
+  min-width: 248px;
+
+  ul {
+    li {
+      cursor: pointer;
+      padding-bottom: 5px;
+
+      &.active-menu {
+        color: blue;
+      }
+    }
+  }
+}

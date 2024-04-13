@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/reset.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+
+  .dynamic-content {
+    flex: 1;
+  }
+
+  .content-container {
+    height: calc(100vh - 39px);
+    padding: 20px 10px;
+  }
+}
