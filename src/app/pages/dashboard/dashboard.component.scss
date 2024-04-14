@@ -1,0 +1,7 @@
+.dashboard-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 50% auto;
+  grid-template-rows: auto auto;
+  margin: 20px 20px 20px 10px;
+}

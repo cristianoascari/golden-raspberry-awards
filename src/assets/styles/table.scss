@@ -12,6 +12,14 @@ table {
         font-size: .8rem;
       }
     }
+
+    &.thead-text-left {
+      tr {
+        th {
+          text-align: left;
+        }
+      }
+    }
   }
 
   tr {
@@ -23,7 +31,7 @@ table {
 
     td, th {
       border: 1px solid #dddbdb;
-      padding: 10px;
+      padding: 5px 10px;
     }
   }
 }

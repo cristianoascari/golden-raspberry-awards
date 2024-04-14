@@ -33,9 +33,9 @@ export class MenuComponent implements OnInit {
         title: 'Dashboard'
       },
       {
-        active: this.isActiveMenu(activeRoute, 'movies'),
-        path: 'movies',
-        title: 'Movies'
+        active: this.isActiveMenu(activeRoute, 'list'),
+        path: 'list',
+        title: 'List'
       }
     ];
   }

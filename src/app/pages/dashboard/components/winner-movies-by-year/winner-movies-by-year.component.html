@@ -1,0 +1,48 @@
+<div class="card">
+  <h1>List movie winners by year</h1>
+
+  <div class="search-form">
+    <input
+      type="number"
+      (input)="searchWinnerMovieByYear()"
+      [(ngModel)]="searchYear"
+      max="2024"
+      maxlength="4"
+      min="1980"
+      placeholder="Search by year"
+      aria-label="Search by year"
+    />
+
+    <button class="search-button" (click)="searchWinnerMovieByYear()">
+      <img src="assets/icons/search-icon.svg">
+    </button>
+  </div>
+
+  <div *ngIf="!isLoading">
+    <table *ngIf="winnerMovie">
+      <thead class="thead-text-left">
+        <tr>
+          <th>Id</th>
+          <th>Year</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>{{ winnerMovie.id }}</td>
+          <td>{{ winnerMovie.year }}</td>
+          <td>{{ winnerMovie.title }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!winnerMovie" class="card-label">
+      <p *ngIf="!searchDone || !searchYear">Provide a year in the field above.</p>
+
+      <p *ngIf="searchDone && searchYear">No winner movie found for year {{ searchYear }}</p>
+    </div>
+  </div>
+
+  <app-loader *ngIf="isLoading"></app-loader>
+</div>

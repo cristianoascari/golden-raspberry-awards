@@ -4,11 +4,20 @@
 
   ul {
     li {
+      color: #333;
       cursor: pointer;
       padding-bottom: 5px;
 
       &.active-menu {
         color: #2196f3;
+
+        &:hover {
+          color: #1776c2;
+        }
+      }
+
+      &:hover {
+        color: #111;
       }
     }
   }

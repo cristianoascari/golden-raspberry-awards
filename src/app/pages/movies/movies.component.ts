@@ -16,7 +16,7 @@ export class MoviesComponent implements OnInit {
 
   public pageNumber: number = 1;
   public pageSize: number = 15;
-  public yearFilter: string|null = null;
+  public yearFilter: string|number|null = null;
   public winnerFilter: EWinnerMovie = EWinnerMovie.YESNO;
   public totalResults: number = 0;
   public totalPages: number = 0;
@@ -56,7 +56,6 @@ export class MoviesComponent implements OnInit {
 
     this.moviesService.get(queryParams).subscribe((response: any) => {
       this.movies = response?.content ?? [];
-      // this.movies = [];
 
       this.totalPages = response?.totalPages ?? 0;
       this.totalResults = response?.totalElements ?? 0;

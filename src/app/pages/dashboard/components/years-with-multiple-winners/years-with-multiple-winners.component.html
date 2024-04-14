@@ -1,0 +1,23 @@
+<div class="card">
+  <h1>List years with multiple winners</h1>
+
+  <div *ngIf="!isLoading">
+    <table>
+      <thead class="thead-text-left">
+        <tr>
+          <th>Year</th>
+          <th>Win Count</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let year of yearsList">
+          <td>{{ year.year }}</td>
+          <td>{{ year.winnerCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-loader *ngIf="isLoading"></app-loader>
+</div>

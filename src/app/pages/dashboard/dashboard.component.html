@@ -1,5 +1,9 @@
-<div *ngIf="!isLoading" class="content-container">
-  Dashboard...
-</div>
+<section class="dashboard-container">
+  <app-years-with-multiple-winners></app-years-with-multiple-winners>
 
-<app-loader *ngIf="isLoading"></app-loader>
+  <app-top-studios-with-winners></app-top-studios-with-winners>
+
+  <app-producers-wins-intervals></app-producers-wins-intervals>
+
+  <app-winner-movies-by-year></app-winner-movies-by-year>
+</section>

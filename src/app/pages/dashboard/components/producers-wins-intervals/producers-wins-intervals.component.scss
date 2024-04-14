@@ -1,0 +1,15 @@
+h2 {
+  margin-top: 10px;
+}
+
+table {
+  margin-top: 4px;
+
+  td {
+    width: 20%;
+
+    &:first-of-type {
+      width: 40%;
+    }
+  }
+}

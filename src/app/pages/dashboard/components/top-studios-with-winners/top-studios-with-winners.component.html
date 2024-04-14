@@ -1,0 +1,23 @@
+<div class="card">
+  <h1>Top 3 studios with winners</h1>
+
+  <div *ngIf="!isLoading">
+    <table>
+      <thead class="thead-text-left">
+        <tr>
+          <th>Name</th>
+          <th>Win Count</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let studio of studiosList">
+          <td>{{ studio.name }}</td>
+          <td>{{ studio.winCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-loader *ngIf="isLoading"></app-loader>
+</div>
