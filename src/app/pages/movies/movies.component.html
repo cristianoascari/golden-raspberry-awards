@@ -1,67 +1,69 @@
-<div *ngIf="!isLoading" class="content-container">
+<div class="content-container">
   <div class="card">
     <h1>List movies</h1>
 
-    <div *ngIf="movies.length">
-      <p class="table-subtitle">
-        {{totalResults}} movie(s) displayed across {{totalPages}} page(s)
-      </p>
+    <div *ngIf="!isLoading">
+      <div *ngIf="movies.length">
+        <p class="table-subtitle">
+          {{totalResults}} movie(s) displayed across {{totalPages}} page(s)
+        </p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
 
-            <th>
-              Year <br />
+              <th>
+                Year <br />
 
-              <input
-                type="number"
-                [(ngModel)]="yearFilter"
-                (input)="filterMoviesByYear()"
-                max="2024"
-                maxlength="4"
-                min="1980"
-                placeholder="Filter by year"
-                aria-label="Filter by year"
-              />
-            </th>
-            
-            <th>Title</th>
-            
-            <th>
-              Winner? <br />
+                <input
+                  type="number"
+                  [(ngModel)]="yearFilter"
+                  (input)="filterMoviesByYear()"
+                  max="2024"
+                  maxlength="4"
+                  min="1980"
+                  placeholder="Filter by year"
+                  aria-label="Filter by year"
+                />
+              </th>
+              
+              <th>Title</th>
+              
+              <th>
+                Winner? <br />
 
-              <select [(ngModel)]="winnerFilter" (change)="filterMoviesByWinner()">
-                <option value="yesno">Yes/No</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-            </th>
-          </tr>
-        </thead>
+                <select [(ngModel)]="winnerFilter" (change)="filterMoviesByWinner()">
+                  <option value="yesno">Yes/No</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr *ngFor="let movie of movies | paginate: { itemsPerPage: pageSize, currentPage: pageNumber, totalItems: totalResults }">
-            <td>{{movie.id}}</td>
-            <td>{{movie.year}}</td>
-            <td>{{movie.title}}</td>
-            <td>{{movie.winner ? 'Yes' : 'No'}}</td>
-          </tr>
-        </tbody>
-      </table>
+          <tbody>
+            <tr *ngFor="let movie of movies | paginate: { itemsPerPage: pageSize, currentPage: pageNumber, totalItems: totalResults }">
+              <td>{{movie.id}}</td>
+              <td>{{movie.year}}</td>
+              <td>{{movie.title}}</td>
+              <td>{{movie.winner ? 'Yes' : 'No'}}</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <pagination-controls
-        (pageChange)="changePage($event)"
-        previousLabel=""
-        nextLabel=""
-      ></pagination-controls>
+        <pagination-controls
+          (pageChange)="changePage($event)"
+          previousLabel=""
+          nextLabel=""
+        ></pagination-controls>
+      </div>
+
+      <div *ngIf="!movies.length" class="no-movies-found">
+        No movies found
+      </div>
     </div>
 
-    <div *ngIf="!movies.length" class="no-movies-found">
-      No movies found
-    </div>
+    <app-loader *ngIf="isLoading"></app-loader>
   </div>
 </div>
-
-<app-loader *ngIf="isLoading"></app-loader>

@@ -1,5 +1,5 @@
 .card {
-  height: 267px;
+  height: 250px;
 
   .search-form {
     display: flex;
@@ -25,5 +25,17 @@
     opacity: .6;
     padding: 40px 0;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .card {
+    height: 280px;
+  }
+}
+
+@media screen and (max-width: 1353px) {
+  .card {
+    height: 310px;
   }
 }

@@ -22,3 +22,15 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .menu {
+    min-width: 160px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    min-width: 110px;
+  }
+}

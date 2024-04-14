@@ -1,15 +1,31 @@
-h2 {
-  margin-top: 10px;
+.card {
+  height: 250px;
+  
+  h2 {
+    margin-top: 10px;
+  }
+
+  table {
+    margin-top: 4px;
+
+    td {
+      width: 20%;
+
+      &:first-of-type {
+        width: 40%;
+      }
+    }
+  }
 }
 
-table {
-  margin-top: 4px;
+@media screen and (max-width: 1400px) {
+  .card {
+    height: 280px;
+  }
+}
 
-  td {
-    width: 20%;
-
-    &:first-of-type {
-      width: 40%;
-    }
+@media screen and (max-width: 1353px) {
+  .card {
+    height: 310px;
   }
 }
