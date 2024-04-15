@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 import { MoviesComponent } from './movies.component';
 

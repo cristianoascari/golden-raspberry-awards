@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { EWinnerMovie } from 'src/app/shared/models/filter.model';
-import { IMovie } from 'src/app/shared/models/movie.model';
+import { EWinnerMovie } from '../../shared/models/filter.model';
+import { IMovie } from '../../shared/models/movie.model';
 
-import { MoviesService } from 'src/app/shared/services/movies/movies.service';
+import { MoviesService } from '../../shared/services/movies/movies.service';
 
 @Component({
   selector: 'app-movies',

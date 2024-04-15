@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IYearMultipleWinners } from 'src/app/shared/models/movie.model';
+import { IYearMultipleWinners } from '../../../../shared/models/movie.model';
 
-import { MoviesService } from 'src/app/shared/services/movies/movies.service';
+import { MoviesService } from '../../../../shared/services/movies/movies.service';
 
 @Component({
   selector: 'app-years-with-multiple-winners',

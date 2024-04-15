@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IStudioWithWinners } from 'src/app/shared/models/movie.model';
+import { IStudioWithWinners } from '../../../../shared/models/movie.model';
 
-import { MoviesService } from 'src/app/shared/services/movies/movies.service';
+import { MoviesService } from '../../../../shared/services/movies/movies.service';
 
 @Component({
   selector: 'app-top-studios-with-winners',

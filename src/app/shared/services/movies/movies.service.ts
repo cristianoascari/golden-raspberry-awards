@@ -2,9 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 
-import { environment as env } from 'src/environments/environment';
+import { environment as env } from '../../../../environments/environment';
 
-import { IAPIResult } from "src/app/shared/models/api.model";
+import { IAPIResult } from "../../models/api.model";
 
 @Injectable({providedIn: 'root'})
 export class MoviesService {

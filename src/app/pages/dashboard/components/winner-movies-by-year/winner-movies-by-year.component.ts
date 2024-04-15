@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { IMovie } from 'src/app/shared/models/movie.model';
+import { IMovie } from '../../../../shared/models/movie.model';
 
-import { MoviesService } from 'src/app/shared/services/movies/movies.service';
+import { MoviesService } from '../../../../shared/services/movies/movies.service';
 
 @Component({
   selector: 'app-winner-movies-by-year',

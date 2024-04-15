@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
-import { IMenu } from 'src/app/shared/models/menu.model';
+import { IMenu } from '../../models/menu.model';
 
 @Component({
   selector: 'app-menu',

@@ -4,30 +4,43 @@ Projeto teste desenvolvido em Angular para a Texo IT. As especificações estão
 
 Abaixo seguem as instruções para execução.
 
-## Running
+## Especificações
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+- Projeto gerado com o [Angular CLI](https://github.com/angular/angular-cli).
+- Versão do Angular: 16.2.14.
+- Versão do Node.js: 18.14.2
+- Versão do TypeScript: 5.1.3
+- Versão do Jest: 29.7.0
 
-## Development server
+## Executando
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Após clonar o projeto, acesse o diretório raiz da aplicação pelo terminal e execute 'npm i' para instalar as dependências.
+- Na sequência, rode o comando 'npm start' para executar a aplicação.
+- No navegador, acesse [http://localhost:4200](http://localhost:4200) para ver a aplicação em execução.
 
-## Code scaffolding
+## Testes unitários
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Para executar os testes unitários execute o comando 'npm run test:coverage'.
+- Após a execução dos testes você pode também ver um relatório web em 'golden-raspberry-awards/coverage/lcov-report/index.html' (abra no navegador).
 
-## Build
+## Observações
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Faltou concluir poucos testes unitários (menu.component, principalmente). O índice de cobertura ficou em 97.1% Statements, 93.05% Branches, 95.12% Functions e 97.1% Lines (604/622).
+- Também faltou utilizar melhor as variáveis de CSS para valores comuns (cores, espaçamentos, ...).
+- Se tivesse mais tempo gostaria de ter implementado internacionalização e um controle de temas.
+- Não me preocupei em ser 100% fiel ao modelo de telas proposto (isso ficaria mais seguro se tivesse uma referência em um Figma, por exemplo).
+- Procurei manter responsivo, independente da resolução mínima sugerida.
 
-## Running unit tests
+## Telas desenvolvidas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Dashboard
 
-## Running end-to-end tests
+![Dashboard](print-dashboard.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- List
 
-## Further help
+![List](print-list.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Relatório de testes
+
+![Testes](print-tests.png)
